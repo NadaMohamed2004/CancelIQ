@@ -239,4 +239,4 @@ CancelIQ brings together data cleaning, leakage checks, feature engineering, sta
 
 ---
 
-*Project by **Nada Mohamed Khalil** — Data Mining & Visualization, MTC Digilians Program.*
+*Project by **Nada Mohamed Khalil**.*
