@@ -13,8 +13,8 @@ DATA AND MODEL
   score_bookings.py             batch scoring: python score_bookings.py input.csv output.csv
   prediction-hotelbookingcancel.ipynb  modeling notebook supplied with the project
 
-UPDATED CHATBOT
-  hotel_chatbot (1).html is the original bilingual assistant updated with the
+CHATBOT
+  hotel_chatbot.html is the original bilingual assistant updated with the
   new embedded XGBoost trees, preprocessing statistics, calibration and dashboard
   facts. Open it directly in a browser for the built-in dashboard answers and
   client-side booking risk calculator. The high-risk threshold is 50%.
