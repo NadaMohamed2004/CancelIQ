@@ -200,11 +200,21 @@ git clone https://github.com/NadaMohamed2004/CancelIQ.git
 cd CancelIQ
 
 python -m venv venv
-# Windows:      venv\Scripts\activate
-# macOS/Linux:  source venv/bin/activate
 
-pip install -r requirements.txt
+# Activate the environment (pick ONE):
+# Windows (CMD / PowerShell):  venv\Scripts\activate
+# Windows (Git Bash):          source venv/Scripts/activate
+# macOS/Linux:                 source venv/bin/activate
+
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
+
+> **Tip:** use `python -m pip` instead of bare `pip`, so packages are always installed
+> into the Python you just activated. If several Python versions are installed and
+> `python -m venv venv` picks the wrong one, call the interpreter you want explicitly
+> (for example `py -3.11 -m venv venv` on Windows, or the full path to `python.exe`).
+> Python 3.11 is a safe choice because the pinned library versions are older.
 
 **A. Standalone chatbot (no server, no Python):** open `visualization/hotel_chatbot.html`
 in a browser for the built-in dashboard answers and the client-side booking risk
@@ -224,7 +234,7 @@ Answers come from aggregates computed on `output/bookings_scored.csv`. Optionall
 ```bash
 # Windows PowerShell
 $env:GEMINI_API_KEY="your_key"
-# macOS/Linux
+# Windows Git Bash / macOS / Linux
 export GEMINI_API_KEY="your_key"
 ```
 
@@ -252,8 +262,20 @@ days_in_waiting_list, customer_type, adr, total_of_special_requests`. The output
 Power BI Desktop (Windows only); import `Hotel_Intelligence_Theme.json` via
 View > Themes > Browse for themes.
 
-**Troubleshooting:** an error loading `preprocessor.joblib` / `FrequencyEncoder` means
-the library versions differ from `requirements.txt`, or `hotel_utils.py` was moved.
+**Troubleshooting:**
+
+- An error loading `preprocessor.joblib` / `FrequencyEncoder` means the library
+  versions differ from `requirements.txt`, or `hotel_utils.py` was moved.
+- `pip: command not found` (Git Bash): Python is not on your PATH. Use
+  `python -m pip ...` after activating the venv.
+- `Unable to create process using ...python.exe` from `py -m venv`: the default Python
+  registered with the `py` launcher no longer exists. Run `py -0p` to list installed
+  versions, then create the venv with one that exists (`py -3.11 -m venv venv` or the
+  full path to its `python.exe`).
+- `venv\Scripts\activate` does nothing in Git Bash: use
+  `source venv/Scripts/activate` instead.
+- Dependency install fails on a very new Python (e.g. 3.12+): recreate the venv with
+  Python 3.10 or 3.11.
 
 **Data sources:**
 
