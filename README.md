@@ -214,7 +214,7 @@ python -m pip install -r requirements.txt
 > into the Python you just activated. If several Python versions are installed and
 > `python -m venv venv` picks the wrong one, call the interpreter you want explicitly
 > (for example `py -3.11 -m venv venv` on Windows, or the full path to `python.exe`).
-> Python 3.11 is a safe choice because the pinned library versions are older.
+> Any Python from 3.10 up works with the pinned versions.
 
 **A. Standalone chatbot (no server, no Python):** open `visualization/hotel_chatbot.html`
 in a browser for the built-in dashboard answers and the client-side booking risk
@@ -274,8 +274,8 @@ View > Themes > Browse for themes.
   full path to its `python.exe`).
 - `venv\Scripts\activate` does nothing in Git Bash: use
   `source venv/Scripts/activate` instead.
-- Dependency install fails on a very new Python (e.g. 3.12+): recreate the venv with
-  Python 3.10 or 3.11.
+- Dependency install fails: make sure the venv is active (you should see `(venv)` in the
+  prompt) and that Python is 3.10 or newer (`python --version`).
 
 **Data sources:**
 
