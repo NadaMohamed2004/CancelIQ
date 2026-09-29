@@ -1,0 +1,187 @@
+{
+  "best_model_name": "XGBoost (tuned) (imbalance-aware, temporal-CV, calibrated)",
+  "model_comparison_temporal_cv": [
+    {
+      "Model": "XGBoost (tuned)",
+      "threshold": 0.49,
+      "Accuracy": 0.8305,
+      "Precision": 0.8044,
+      "Recall": 0.7056,
+      "F1": 0.7518,
+      "ROC-AUC": 0.9037,
+      "PR-AUC": 0.8628
+    },
+    {
+      "Model": "Blend XGB+LGBM",
+      "threshold": 0.41,
+      "Accuracy": 0.8305,
+      "Precision": 0.8027,
+      "Recall": 0.7081,
+      "F1": 0.7525,
+      "ROC-AUC": 0.9036,
+      "PR-AUC": 0.8629
+    },
+    {
+      "Model": "CatBoost (tuned)",
+      "threshold": 0.34,
+      "Accuracy": 0.8294,
+      "Precision": 0.795,
+      "Recall": 0.7156,
+      "F1": 0.7532,
+      "ROC-AUC": 0.9007,
+      "PR-AUC": 0.8609
+    },
+    {
+      "Model": "Random Forest (tuned)",
+      "threshold": 0.3,
+      "Accuracy": 0.8289,
+      "Precision": 0.7809,
+      "Recall": 0.7363,
+      "F1": 0.7579,
+      "ROC-AUC": 0.8958,
+      "PR-AUC": 0.8528
+    },
+    {
+      "Model": "LightGBM (tuned)",
+      "threshold": 0.3,
+      "Accuracy": 0.8262,
+      "Precision": 0.7795,
+      "Recall": 0.7282,
+      "F1": 0.753,
+      "ROC-AUC": 0.8982,
+      "PR-AUC": 0.8576
+    },
+    {
+      "Model": "Logistic Regression (tuned)",
+      "threshold": 0.37,
+      "Accuracy": 0.8005,
+      "Precision": 0.7241,
+      "Recall": 0.7294,
+      "F1": 0.7267,
+      "ROC-AUC": 0.8688,
+      "PR-AUC": 0.818
+    },
+    {
+      "Model": "Dummy baseline",
+      "threshold": 0.5,
+      "Accuracy": 0.6363,
+      "Precision": 0.0,
+      "Recall": 0.0,
+      "F1": 0.0,
+      "ROC-AUC": 0.4821,
+      "PR-AUC": 0.3531
+    }
+  ],
+  "is_stacking": false,
+  "selection_metric": "Accuracy",
+  "decision_threshold": 0.5000000000000002,
+  "calibration": {
+    "method": "platt",
+    "a": 0.9081114763006348,
+    "b": 0.02607763123627986,
+    "formula": "p_cal = sigmoid(a * logit(p_raw) + b)"
+  },
+  "risk_levels": {
+    "low_below": 0.25,
+    "high_from": 0.5000000000000002
+  },
+  "hyperparameters": {
+    "max_depth": 3,
+    "learning_rate": 0.05,
+    "n_estimators": 800,
+    "min_child_weight": 3,
+    "subsample": 0.6,
+    "colsample_bytree": 0.9,
+    "gamma": 0.5,
+    "reg_lambda": 5,
+    "reg_alpha": 1,
+    "scale_pos_weight": 1.79
+  },
+  "validation": "expanding-window temporal CV inside train_df, windows: 2016-04-01..2016-07-01; 2016-07-01..2016-10-01; 2016-10-01..2017-01-01; 2017-01-01..2017-03-26",
+  "train_temporal_cv_metrics": {
+    "Accuracy": 0.8306899423891164,
+    "Precision": 0.8057298772169168,
+    "Recall": 0.7043698120408358,
+    "F1": 0.7516481278794512,
+    "ROC-AUC": 0.9036561994789303,
+    "PR-AUC": 0.8628243090600031
+  },
+  "test_metrics": {
+    "Accuracy": 0.7949100756891883,
+    "Precision": 0.7654006905324369,
+    "Recall": 0.7169971912503191,
+    "F1": 0.7404087013843111,
+    "ROC-AUC": 0.8846520046794577,
+    "PR-AUC": 0.8458987588507304
+  },
+  "train_period": [
+    "2015-07-01",
+    "2017-03-25"
+  ],
+  "test_period": [
+    "2017-03-26",
+    "2017-08-31"
+  ],
+  "excluded_leakage_features": [
+    "assigned_room_type",
+    "booking_changes",
+    "has_booking_changes",
+    "room_type_changed",
+    "required_car_parking_spaces"
+  ],
+  "feature_columns_in": [
+    "hotel",
+    "lead_time",
+    "arrival_date_year",
+    "arrival_date_day_of_month",
+    "stays_in_weekend_nights",
+    "stays_in_week_nights",
+    "adults",
+    "children",
+    "babies",
+    "meal",
+    "country",
+    "market_segment",
+    "distribution_channel",
+    "is_repeated_guest",
+    "previous_cancellations",
+    "previous_bookings_not_canceled",
+    "reserved_room_type",
+    "deposit_type",
+    "agent",
+    "company",
+    "days_in_waiting_list",
+    "customer_type",
+    "adr",
+    "total_of_special_requests",
+    "has_company",
+    "has_agent",
+    "no_guests_recorded",
+    "party_size_category",
+    "stay_type",
+    "lead_time_category",
+    "guest_cancellation_rate",
+    "adr_per_person",
+    "arrival_month_num",
+    "arrival_month_sin",
+    "arrival_month_cos",
+    "lead_time_x_special_requests",
+    "guest_cancellation_rate_x_lead_time",
+    "sibling_count",
+    "agent_day_lead_count"
+  ],
+  "high_cardinality_frequency_encoded": [
+    "agent",
+    "company",
+    "country"
+  ],
+  "preprocessor_file": "preprocessor.joblib",
+  "model_file": "best_model.joblib",
+  "native_model_file": "best_model.json",
+  "requires": {
+    "python_module": "hotel_utils.py",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.2.0",
+    "pandas": "2.3.3"
+  }
+}

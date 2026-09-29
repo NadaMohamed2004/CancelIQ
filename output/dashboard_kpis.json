@@ -1,0 +1,14 @@
+{
+  "total_bookings": 119389,
+  "cancellation_rate": 0.3704193853705115,
+  "booked_revenue_all": 42723561.33,
+  "realised_revenue": 25996324.209999997,
+  "lost_revenue_actual": 16727237.120000001,
+  "expected_lost_revenue_model": 16812400.749999996,
+  "avg_adr": 101.83202790876881,
+  "high_risk_bookings": 40453,
+  "high_risk_share": 0.3388335608808182,
+  "repeat_guest_rate": 0.031904111769090956,
+  "waiting_list_size": 3698,
+  "waiting_list_avg_risk": 0.6673764467279611
+}

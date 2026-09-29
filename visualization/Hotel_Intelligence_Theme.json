@@ -1,0 +1,36 @@
+{
+  "name": "Hotel Intelligence — Warm Minimal",
+  "dataColors": [
+    "#B5654A", "#7C9473", "#D9A441", "#5B8A8C",
+    "#9A7A63", "#C48A5A", "#6E8B6E", "#A65C4E"
+  ],
+  "background": "#FAF6EF",
+  "foreground": "#3A342C",
+  "tableAccent": "#B5654A",
+  "good": "#7C9473",
+  "neutral": "#D9A441",
+  "bad": "#B5654A",
+  "maximum": "#B5654A",
+  "center": "#D9A441",
+  "minimum": "#7C9473",
+  "null": "#C9C0B3",
+  "textClasses": {
+    "callout": { "fontSize": 26, "fontFace": "Segoe UI Semilight" },
+    "title": { "fontSize": 13, "fontFace": "Segoe UI Semibold", "color": "#3A342C" },
+    "label": { "fontSize": 11, "fontFace": "Segoe UI", "color": "#7A7266" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 }],
+        "border": [{ "show": false }],
+        "dropShadow": [{ "show": true, "preset": "0", "color": { "solid": { "color": "#3A342C" } }, "transparency": 92, "position": "outer" }]
+      }
+    },
+    "card": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#F1EBDF" } } }]
+      }
+    }
+  }
+}
