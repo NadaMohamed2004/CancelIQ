@@ -192,7 +192,7 @@ CancelIQ/
 
 ## 10. Running it locally
 
-**Requirements:** Python 3.10+. The saved model and preprocessor only load with the
+**Requirements:** Python 3.11+. The saved model and preprocessor only load with the
 library versions pinned in `requirements.txt`.
 
 ```bash
@@ -214,7 +214,7 @@ python -m pip install -r requirements.txt
 > into the Python you just activated. If several Python versions are installed and
 > `python -m venv venv` picks the wrong one, call the interpreter you want explicitly
 > (for example `py -3.11 -m venv venv` on Windows, or the full path to `python.exe`).
-> Any Python from 3.10 up works with the pinned versions.
+> Any Python from 3.11 up works with the pinned versions.
 
 **A. Standalone chatbot (no server, no Python):** open `visualization/hotel_chatbot.html`
 in a browser for the built-in dashboard answers and the client-side booking risk
@@ -274,8 +274,12 @@ View > Themes > Browse for themes.
   full path to its `python.exe`).
 - `venv\Scripts\activate` does nothing in Git Bash: use
   `source venv/Scripts/activate` instead.
+- `Python was not found; run without arguments to install from the Microsoft Store`: the
+  Windows Store shortcut is intercepting `python`. Disable the `python.exe` and
+  `python3.exe` entries in Settings > Apps > Advanced app settings > App execution
+  aliases, or use `py -3.11` instead of `python` when creating the venv.
 - Dependency install fails: make sure the venv is active (you should see `(venv)` in the
-  prompt) and that Python is 3.10 or newer (`python --version`).
+  prompt) and that Python is 3.11 or newer (`python --version`).
 
 **Data sources:**
 
